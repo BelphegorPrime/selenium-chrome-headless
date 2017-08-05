@@ -14,9 +14,8 @@ Then, build the Chrome image
 
     docker build -t selenium-chrome chrome
 
-By default, it's built using Chrome Beta, as stable has problems running test suites that navigate in windows.
-
-Build an image for stable Chrome with:
+By default, the image is built using Chrome Beta, as stable Chrome is not so stable when running test suites that
+navigate in windows. You can build an image for stable Chrome with:
 
     docker build -t selenium-chrome-stable --build-arg CHROME_VERSION=stable .
 
