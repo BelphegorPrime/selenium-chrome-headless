@@ -11,7 +11,7 @@ RUN apt-get -qqy update \
 
 RUN curl -fksS https://dl.google.com/linux/direct/google-chrome-${CHROME_VERSION}_current_amd64.deb > /tmp/chrome.deb \
     && dpkg -i /tmp/chrome.deb \
-    || apt-get -qqyf --no-install-recommends install > /dev/null \
+    || apt-get -qqyf install > /dev/null \
     && rm /tmp/chrome.deb
 
 RUN curl -fksS ${CHROME_DRIVER_URL} > /tmp/chromedriver.zip \
