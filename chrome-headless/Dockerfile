@@ -2,7 +2,7 @@ FROM selenium-server
 LABEL authors="Federico Marzocchi <hello@mrz.io>"
 
 ARG CHROME_VERSION=beta
-ARG CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/2.31/chromedriver_linux64.zip
+ARG CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
 
 RUN apt-get -qqy update \
   && apt-get -qqy install --no-install-recommends \
