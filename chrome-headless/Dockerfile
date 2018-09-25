@@ -5,7 +5,7 @@ ARG CHROME_VERSION=beta
 ARG CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
 
 RUN apt-get -qqy update \
-  && apt-get -qqy install --no-install-recommends \
+  && apt-get -qqy install \
   curl \
   unzip
 
