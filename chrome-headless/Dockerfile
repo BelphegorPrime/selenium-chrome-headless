@@ -7,12 +7,14 @@ ARG CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/2.33/chromedri
 RUN apt-get -qqy update \
   && apt-get -qqy install \
   curl \
-  unzip
+  unzip libxi6 libgconf-2-4
 
 RUN curl -fksS https://dl.google.com/linux/direct/google-chrome-${CHROME_VERSION}_current_amd64.deb > /tmp/chrome.deb \
     && dpkg -i /tmp/chrome.deb \
     || apt-get -qqyf install > /dev/null \
     && rm /tmp/chrome.deb
+
+RUN apt-get -f install
 
 RUN curl -fksS ${CHROME_DRIVER_URL} > /tmp/chromedriver.zip \
     && unzip /tmp/chromedriver.zip -d /tmp/ \
